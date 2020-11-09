@@ -12,6 +12,7 @@ using InstitutoCore3._0.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using InstitutoCore3._0.Data.Repositories;
 
 namespace InstitutoCore3._0
 {
@@ -27,13 +28,18 @@ namespace InstitutoCore3._0
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // COnfiguracion del DBCOntext para EF
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                options.UseInMemoryDatabase(databaseName: "InstitutoDB"));
+                
+                //.UseSqlite(Configuration.GetConnectionString("DefaultConnection"))
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
-           services.AddRazorPages();
+            services.AddRazorPages();
+
+            // Configuracion de dependencias
+            services.AddScoped<IAlumnoRepositorio, AlumnoRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

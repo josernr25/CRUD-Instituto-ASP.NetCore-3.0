@@ -11,7 +11,15 @@ namespace InstitutoCore3._0.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var escuela = new Escuela();
+            escuela.Nombre = "Maria Auxiliadora";
+            escuela.AnioDeCreacion = 1978;
+            escuela.Direccion = "Av. Libertad 2283";
+            escuela.Pais = "Argentina";
+            escuela.Ciudad = "Corrientes";
+            escuela.TipoEscuela = TiposEscuela.Secundaria;
+
+            return View(escuela);
         }
     }
 }

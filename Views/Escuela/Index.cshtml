@@ -1,10 +1,17 @@
 @model Escuela
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
 <h1>Escuela</h1>
-<p><strong>Nombre:</strong> </p>
-<p><strong>Anio de fundacion: </strong> </p>
+<p><strong>Nombre: @Model.Nombre</strong> </p>
+<p><strong>Anio de fundacion: </strong> @Model.AnioDeCreacion</p>
+<p><strong>Tipo de escuela: </strong> @Model.TipoEscuela</p>
 <br />
-<p></p>
+<address>
+    <p>Direccion: @Model.Direccion</p>
+    <p>Pais: @Model.Pais</p>
+    <p>Ciudad: @Model.Ciudad</p>
+</address>
+<br />
+<p>@Model.Id</p>
