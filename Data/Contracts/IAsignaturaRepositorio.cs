@@ -1,11 +1,10 @@
 ﻿using InstitutoCore3._0.Models;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace InstitutoCore3._0.Data.Repositories
 {
-    public interface IAlumnoRepositorio
+    public interface IAsignaturaRepositorio
     {
-        IEnumerable<Alumno> Obtener();
+        IEnumerable<Asignatura> Obtener();
     }
 }

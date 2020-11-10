@@ -1,4 +1,28 @@
-﻿@model ObjetoEscuelaBase
+﻿
+<div>
+    <h1 style="font-family: Abel, sans-serif;font-size: 42px;text-align: center;border-bottom: 1px solid rgb(142,142,142);color: rgb(86,86,86);"><strong>@ViewBag.Title</strong></h1>
+</div>
+<br />
+<div class="container">
+    <div class="table-responsive" style="font-family: Abel, sans-serif;border-width: 0px;border-color: rgb(92,90,90);border-bottom-width: 0px;box-shadow: inset 2px 0px rgb(78,77,77);">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="font-size: 16px;">Nombre</th>
+                    <th style="font-size: 16px;">ID</th>
+                </tr>
+            </thead>
+            <tbody>
 
-<p><strong>Nombre: @Model.Nombre</strong> </p>
-<p><strong>ID: </strong>@Model.Id</p>
+                @foreach (var alumno in Model)
+                {
+                    <tr>
+                        <td>@alumno.Nombre</td>
+                        <td>@alumno.Id</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

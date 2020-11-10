@@ -1,17 +1,28 @@
-@model Escuela
+@model List<Asignatura>
 @{
     ViewData["Title"] = "Inicio";
 }
 
-<h1>Escuela</h1>
-<p><strong>Nombre: @Model.Nombre</strong> </p>
-<p><strong>Anio de fundacion: </strong> @Model.AnioDeCreacion</p>
-<p><strong>Tipo de escuela: </strong> @Model.TipoEscuela</p>
-<br />
-<address>
-    <p>Direccion: @Model.Direccion</p>
-    <p>Pais: @Model.Pais</p>
-    <p>Ciudad: @Model.Ciudad</p>
-</address>
-<br />
-<p>@Model.Id</p>
+
+<div class="article-list">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Nuestros Cursos</h2>
+            <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+        </div>
+        <div class="row articles">
+            @foreach (var curso in Model)
+            {
+                <div class="col-sm-6 col-md-4 item">
+                    <a href="#"><img class="img-fluid" src="@curso.imagen"></a>
+                    <h3 class="name">@curso.Nombre</h3>
+                    <p class="description">@curso.descripcion</p>
+                    <a class="action" href="#">
+                        <i class="fa fa-arrow-circle-right" style="color: rgb(41,56,184);"></i>
+                    </a>
+                    <br />
+                </div>
+            }
+        </div>
+    </div>
+</div>

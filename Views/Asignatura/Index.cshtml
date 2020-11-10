@@ -3,15 +3,4 @@
     ViewData["Title"] = "Asignaturas";
 }
 
-<h1>@ViewData["Title"]</h1>
-<br />
-@foreach (var asignatura in Model)
-{
-    <partial name="ObjetoEscuelaPartial" model=asignatura />
-    @*@Html.Partial("ObjetoEscuelaPartial", asignatura)*@
-}
-
-<br />
-<p><strong>Fecha:</strong> <i> @ViewBag.Fecha</i></p>
-<br />
-
+<partial name="ObjetoEscuelaPartial" />

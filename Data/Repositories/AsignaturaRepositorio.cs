@@ -1,5 +1,6 @@
 ﻿using InstitutoCore3._0.Models;
 using Microsoft.EntityFrameworkCore;
+using SQLitePCL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,21 +8,25 @@ using System.Threading.Tasks;
 
 namespace InstitutoCore3._0.Data.Repositories
 {
-    public class AlumnoRepositorio : IAlumnoRepositorio
+    public class AsignaturaRepositorio : IAsignaturaRepositorio
     {
         private readonly ApplicationDbContext _context;
-        private readonly DbSet<Alumno> _dbSet;
+        private readonly DbSet<Asignatura> _dbSet;
 
-        public AlumnoRepositorio(ApplicationDbContext context)
+        public AsignaturaRepositorio(ApplicationDbContext context)
         {
             _context = context;
-            _dbSet = context.Set<Alumno>();
+            _dbSet = context.Set<Asignatura>();
         }
 
-        public IEnumerable<Alumno> Obtener()
+        public IEnumerable<Asignatura> Obtener()
         {
             return _dbSet.ToList();
         }
 
+        //public List<Asignatura> ObtenerTodos()
+        //{
+           
+        //}
     }
 }
