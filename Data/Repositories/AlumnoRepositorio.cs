@@ -18,9 +18,10 @@ namespace InstitutoCore3._0.Data.Repositories
             _dbSet = context.Set<Alumno>();
         }
 
-        public IEnumerable<Alumno> Obtener()
+        public Alumno Obtener()
         {
-            return _dbSet.ToList();
+            
+            return _dbSet.FirstOrDefault<Alumno>();
         }
 
     }

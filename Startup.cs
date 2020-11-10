@@ -40,7 +40,6 @@ namespace InstitutoCore3._0
 
             // Configuracion de dependencias
             services.AddScoped<IAlumnoRepositorio, AlumnoRepositorio>();
-            services.AddScoped<IAsignaturaRepositorio, AsignaturaRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

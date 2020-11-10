@@ -19,9 +19,9 @@ namespace InstitutoCore3._0.Controllers
 
         public IActionResult Index()
         {
-            var alumnos = _alumnoRepositorio.Obtener();
+            var alumno = _alumnoRepositorio.Obtener();
 
-            return View(alumnos);
+            return View(alumno);
         }
     }
 }

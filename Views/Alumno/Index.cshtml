@@ -1,7 +1,17 @@
-@model List<Alumno>
+@model Alumno
 @{
     ViewData["Title"] = "Alumnos";
 }
 
-<partial name="ObjetoEscuelaPartial"/>
-    
+<h1>@ViewData["Title"]</h1>
+<br />
+
+<partial name="ObjetoEscuelaPartial" />
+@*
+    @foreach (var alumno in Model)
+    {
+        <partial name="ObjetoEscuelaPartial" model=alumno />
+        @Html.Partial("ObjetoEscuelaPartial", alumno)
+        }
+*@
+
